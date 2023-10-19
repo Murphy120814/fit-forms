@@ -43,7 +43,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-white dark:bg-midnightBlack">
+    <div className="bg-white dark:bg-midnightBlack scroll-smooth">
       <Navbar />
       <Outlet />
       <Footer />

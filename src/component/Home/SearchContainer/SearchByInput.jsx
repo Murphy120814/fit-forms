@@ -1,13 +1,18 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { searchInput } from "../../../slices/searchSlice";
+import { searchExercise } from "../../../utils/searchExercise";
+import { searchedExercise } from "../../../slices/exerciseDataSlice";
 
 function SearchByInput() {
   const search = useSelector((store) => store.search);
+  const data = useSelector((store) => store.exerciseDb);
+  // console.log(Array.isArray(data.allExercises));
+  console.log(data);
   const dispatch = useDispatch();
   console.log(search);
   return (
-    <div className="max-w-screen-xl mx-auto p-8">
+    <div id="search" className="max-w-screen-xl mx-auto px-8">
       <form>
         <label
           htmlFor="default-search"
@@ -35,7 +40,7 @@ function SearchByInput() {
             type="search"
             value={search}
             onChange={(event) => {
-              dispatch(searchInput(event.target.value));
+              dispatch(searchInput(event.target.value.toLowerCase()));
             }}
             id="default-search"
             className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -44,6 +49,9 @@ function SearchByInput() {
           <button
             onClick={(event) => {
               event.preventDefault();
+              const filteredData = searchExercise(data.allExercises, search);
+              console.log(filteredData, search);
+              dispatch(searchedExercise(filteredData));
             }}
             className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Search
