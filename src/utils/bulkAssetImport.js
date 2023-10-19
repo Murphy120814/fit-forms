@@ -9,6 +9,7 @@ import waist from "../assets/waist.png";
 import shoulders from "../assets/shoulder.png";
 import neck from "../assets/neck.png";
 import all from "../assets/all.png";
+import stretch from "../assets/stretch.png";
 
 export const assetsMap = {
   all,
@@ -22,4 +23,5 @@ export const assetsMap = {
   waist,
   shoulders,
   neck,
+  stretch,
 };

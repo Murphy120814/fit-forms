@@ -1,4 +1,5 @@
 export function searchExercise(data, searchTerm) {
+  console.log(searchTerm);
   if (searchTerm.toLowerCase() === "all") return data;
   const filteredExercises = data?.filter((exercise) => {
     return (
