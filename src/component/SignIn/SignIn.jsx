@@ -1,65 +1,34 @@
 import React from "react";
+import SignUpButton from "./SignUpButton";
+import SignInAnonymous from "./SignInAnonymous";
+import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
+import { useSelector } from "react-redux";
 
 function SignIn() {
+  const isWantToCreateAccount = useSelector(
+    (store) => store.auth.isWantToCreateAccount
+  );
   return (
     <div className="dark:bg-[#1f1e23] bg-white h-screen flex flex-col justify-center items-center">
       <div className="max-w-screen-xl mx-auto  bg-white dark:bg-[#1F1E23]">
-        <form className="mt-28">
-          <div className="p-4">
-            <div className="mb-6 w-[250px] md:w-[500px]">
-              <label
-                htmlFor="email"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Your email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="name@fitForms.xyz"
-                required
-              />
-            </div>
-            <div className=" mb-4 w-[250px] md:w-[500px]">
-              <label
-                htmlFor="password"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Your password
-              </label>
-              <input
-                type="password"
-                id="password"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                required
-              />
-            </div>
-            <div className="flex items-start mb-6">
-              <div className="flex items-center h-5">
-                <input
-                  id="remember"
-                  type="checkbox"
-                  value=""
-                  className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-                />
-              </div>
-              <label
-                htmlFor="remember"
-                className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                Remember me
-              </label>
-            </div>
-            <button
-              type="submit"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              Submit
-            </button>
-          </div>
-        </form>
+        {isWantToCreateAccount ? <SignUpForm /> : <SignInForm />}
       </div>
-      <div className="flex items-center my-8 ">
-        <div className="border-t border-red-500 flex-grow my-4"></div>
-        <div className="mx-4 text-gray-500"> or</div>
-        <div className="border-t border-gray-600 flex-grow my-4"></div>
+
+      <div className="flex  md:flex-row flex-col justify-between items-center mt-12">
+        {!isWantToCreateAccount && <SignUpButton />}
+
+        {/* divider logic ends here */}
+        {!isWantToCreateAccount && (
+          <div className="flex items-center my-4 ">
+            <div className="border-t border-red-500 flex-grow my-4"></div>
+            <div className="mx-4 text-gray-500"> or</div>
+            <div className="border-t border-gray-600 flex-grow my-4"></div>
+          </div>
+        )}
+        {/* divider logic ends here */}
+
+        <SignInAnonymous />
       </div>
     </div>
   );

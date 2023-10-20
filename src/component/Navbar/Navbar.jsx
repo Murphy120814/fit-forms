@@ -6,8 +6,10 @@ import NavLinks from "./NavLinks";
 import { useSelector } from "react-redux";
 
 function Navbar() {
-  const isSingInPageOpen = useSelector((store) => store.auth.isSingInPageOpen);
-  console.log(isSingInPageOpen);
+  const { isSingInPageOpen, isHideNavBarLinks } = useSelector(
+    (store) => store.auth
+  );
+
   return (
     <>
       <nav
@@ -16,11 +18,11 @@ function Navbar() {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <NavLogo />
           <div className="flex md:order-2 items-center md:gap-3">
-            {isSingInPageOpen && <SignInSignUp />}
+            {!isSingInPageOpen && <SignInSignUp />}
             <DarkModeToggle />
           </div>
           <div className="items-center justify-between w-full md:flex md:w-auto md:order-1">
-            <NavLinks />
+            {!isHideNavBarLinks && <NavLinks />}
           </div>
         </div>
       </nav>
