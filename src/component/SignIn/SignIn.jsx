@@ -2,7 +2,7 @@ import React from "react";
 import SignUpButton from "./SignUpButton";
 import SignInAnonymous from "./SignInAnonymous";
 import SignInForm from "./SignInForm";
-import SignUpForm from "./SignUpForm";
+
 import { useSelector } from "react-redux";
 
 function SignIn() {
@@ -10,9 +10,9 @@ function SignIn() {
     (store) => store.auth.isWantToCreateAccount
   );
   return (
-    <div className="dark:bg-[#1f1e23] bg-white h-screen flex flex-col justify-center items-center">
+    <div className="dark:bg-[#1f1e23] bg-white h-[90vh] flex flex-col justify-center items-center">
       <div className="max-w-screen-xl mx-auto  bg-white dark:bg-[#1F1E23]">
-        {isWantToCreateAccount ? <SignUpForm /> : <SignInForm />}
+        <SignInForm />
       </div>
 
       <div className="flex  md:flex-row flex-col justify-between items-center mt-12">

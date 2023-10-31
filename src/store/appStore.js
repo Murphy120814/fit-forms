@@ -3,6 +3,7 @@ import themeSlice from "../slices/themeSlice";
 import searchSlice from "../slices/searchSlice";
 import exerciseDataSlice from "../slices/exerciseDataSlice";
 import authSlice from "../slices/authSlice";
+import userInfoSlice from "../slices/userInfoSlice";
 
 const appStore = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const appStore = configureStore({
     search: searchSlice,
     exerciseDb: exerciseDataSlice,
     auth: authSlice,
+    userInfo: userInfoSlice,
   },
 });
 
