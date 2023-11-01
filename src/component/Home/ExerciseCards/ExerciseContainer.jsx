@@ -12,7 +12,7 @@ function ExerciseContainer() {
     <>
       {/* <div id="justScroll"></div> */}
       <div
-        id="searchResultContainer"
+  
         className="max-w-screen-xl mx-auto flex flex-wrap items-center md:justify-between">
         {filteredExercises.map((exercise) => (
           <ExerciseCards exercise={exercise} key={exercise.id} />

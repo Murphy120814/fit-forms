@@ -32,7 +32,7 @@ function useFormValidation() {
       passWord: Yup.string()
         .required("Please enter a password")
         // check minimum characters
-        .min(8, "Password must have at least 8 characters")
+        .min(6, "Password must have at least 8 characters")
         // different error messages for different requirements
         .matches(/[0-9]/, getCharacterValidationError("digit"))
         .matches(/[a-z]/, getCharacterValidationError("lowercase"))
@@ -49,7 +49,7 @@ function useFormValidation() {
               displayName: values.name,
             })
               .then(() => {
-                const { uid, email, displayName = "Guest" } = user;
+                const { uid, email, displayName } = user;
                 dispatch(addUserInfo({ uid, email, displayName }));
               })
               .catch((error) => {

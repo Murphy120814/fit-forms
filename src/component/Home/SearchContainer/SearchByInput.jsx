@@ -12,7 +12,7 @@ function SearchByInput() {
   const dispatch = useDispatch();
   console.log(search);
   return (
-    <div id="search" className="max-w-screen-xl mx-auto px-8">
+    <div className="max-w-screen-xl mx-auto px-8">
       <form>
         <label
           htmlFor="default-search"
