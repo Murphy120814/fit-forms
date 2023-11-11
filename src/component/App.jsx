@@ -1,5 +1,14 @@
 import React, { useEffect } from "react";
-import { Navbar, Footer, Home, Calender, Calculator, SignIn, ForgotPassword } from "./index";
+import {
+  Navbar,
+  Footer,
+  Home,
+  Calender,
+  Calculator,
+  SignIn,
+  ForgotPassword,
+  PersonalInfo,
+} from "./index";
 import { useDispatch } from "react-redux";
 import { isDark } from "../slices/themeSlice";
 
@@ -33,8 +42,12 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: "/forgotPassword",
-        element: <ForgotPassword/>
-      }
+        element: <ForgotPassword />,
+      },
+      {
+        path: "/personalInfo",
+        element: <PersonalInfo />,
+      },
     ],
   },
 ]);

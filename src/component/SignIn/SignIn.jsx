@@ -11,7 +11,7 @@ function SignIn() {
   );
   return (
     <div className="dark:bg-[#1f1e23] bg-white h-[90vh] flex flex-col justify-center items-center">
-      <div className="max-w-screen-xl mx-auto  bg-white dark:bg-[#1F1E23]">
+      <div className="max-w-screen-xl mx-auto bg-white dark:bg-[#1F1E23]">
         <SignInForm />
       </div>
 

@@ -10,9 +10,9 @@ function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#1F1E23]">
       <Header />
-      <SearchByInput />
+      {/* <SearchByInput />
       <SearchByParts />
-      <ExerciseContainer />
+      <ExerciseContainer /> */}
     </div>
   );
 }

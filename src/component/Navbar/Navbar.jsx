@@ -10,6 +10,8 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../utils/fireBaseSDK";
 import SignOut from "./SignOut";
 import { setIsAuthenticated } from "../../slices/authSlice";
+import pandaAvatar from "../../assets/panda-bear.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -60,11 +62,14 @@ function Navbar() {
             {!isAuthenticated ? (
               <div>{!isSingInPageOpen ? <SignInSignUp /> : null}</div>
             ) : (
-              <div className="flex items-center md:gap-3">
-                <img
-                  className="h-10 w-200 rounded-full"
-                  src={""}
-                  alt="userProfile"></img>
+              <div className="flex items-center gap-2">
+                <Link to="/personalInfo">
+                  <img
+                    className="h-10 w-200 rounded-full cursor-pointer"
+                    src={pandaAvatar}
+                    alt="userProfile"></img>
+                </Link>
+
                 <SignOut handleSignOut={handleSignOut} />
               </div>
             )}
