@@ -8,6 +8,7 @@ import {
   SignIn,
   ForgotPassword,
   PersonalInfo,
+  TalkToCoach,
 } from "./index";
 import { useDispatch } from "react-redux";
 import { isDark } from "../slices/themeSlice";
@@ -35,6 +36,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/calculator",
         element: <Calculator />,
+      },
+      {
+        path: "/talkToCoach",
+        element: <TalkToCoach />,
       },
       {
         path: "/signIn",

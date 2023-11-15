@@ -6,6 +6,8 @@ const exerciseDataSlice = createSlice({
     allExercises: null,
     filteredExercises: null,
     allBodyParts: null,
+    macrosFormFilledData: null,
+    userMacroProfile: null,
   },
   reducers: {
     addAllExerciseData: (state, action) => {
@@ -17,9 +19,21 @@ const exerciseDataSlice = createSlice({
     addBodyPartsData: (state, action) => {
       state.allBodyParts = action.payload;
     },
+
+    addMacrosFormData: (state, action) => {
+      state.macrosFormFilledData = action.payload;
+    },
+    addUserMacroProfile: (state, action) => {
+      state.userMacroProfile = action.payload;
+    },
   },
 });
 
-export const { addAllExerciseData, searchedExercise, addBodyPartsData } =
-  exerciseDataSlice.actions;
+export const {
+  addAllExerciseData,
+  searchedExercise,
+  addBodyPartsData,
+  addMacrosFormData,
+  addUserMacroProfile,
+} = exerciseDataSlice.actions;
 export default exerciseDataSlice.reducer;
