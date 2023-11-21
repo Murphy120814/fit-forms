@@ -15,6 +15,7 @@ import { isDark } from "../slices/themeSlice";
 
 import toggleTheme from "../utils/toggle";
 import { Outlet, createBrowserRouter } from "react-router-dom";
+import ExerciseInfo from "./Home/ExerciseInfo/ExerciseInfo";
 
 export const appRouter = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/personalInfo",
         element: <PersonalInfo />,
+      },
+      {
+        path: "/exercise/:id",
+        element: <ExerciseInfo />,
       },
     ],
   },

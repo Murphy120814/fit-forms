@@ -63,12 +63,12 @@ function Navbar() {
               <div>{!isSingInPageOpen ? <SignInSignUp /> : null}</div>
             ) : (
               <div className="flex items-center gap-2">
-                <Link to="/personalInfo">
+                {/* <Link to="/personalInfo">
                   <img
                     className="h-10 w-200 rounded-full cursor-pointer"
                     src={pandaAvatar}
                     alt="userProfile"></img>
-                </Link>
+                </Link> */}
 
                 <SignOut handleSignOut={handleSignOut} />
               </div>
