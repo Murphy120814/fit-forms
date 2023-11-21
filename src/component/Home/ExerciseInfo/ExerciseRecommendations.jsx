@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function ExerciseRecommendations() {
-  return (
-    <div>
-      This is exercise Recommnedation
-    </div>
-  )
+  return <div></div>;
 }
 
-export default ExerciseRecommendations
+export default ExerciseRecommendations;

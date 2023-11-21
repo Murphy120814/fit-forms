@@ -1,7 +1,7 @@
 import React from "react";
 
 function ExerciseVideos() {
-  return <div>THis is exercise Videos</div>;
+  return <div></div>;
 }
 
 export default ExerciseVideos;
