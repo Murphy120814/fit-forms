@@ -21,7 +21,7 @@ function ExerciseDetails({ exerciseDetails }) {
         </h1>
         <p className="mt-4">
           <span className="text-lg text-blue-600">How to Perform:</span>{" "}
-          {instructions.join(" ")}
+          {instructions?.join(" ")}
         </p>
         <div className="flex flex-col justify-start w-full">
           <p className="mt-4">
@@ -36,7 +36,7 @@ function ExerciseDetails({ exerciseDetails }) {
             <span className="text-lg text-blue-600">
               Secondary Muscles Used:
             </span>{" "}
-            {secondaryMuscles.join(", ")}
+            {secondaryMuscles?.join(", ")}
           </p>
         </div>
       </div>
