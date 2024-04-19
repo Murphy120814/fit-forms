@@ -19,10 +19,10 @@ function ExerciseDetails({ exerciseDetails }) {
         <h1 className="font-bold text-3xl text-blue-600 ">
           {name.toUpperCase()}
         </h1>
-        <p className="mt-4">
+{/*         <p className="mt-4">
           <span className="text-lg text-blue-600">How to Perform:</span>{" "}
           {instructions?.join(" ")}
-        </p>
+        </p> */}
         <div className="flex flex-col justify-start w-full">
           <p className="mt-4">
             <span className="text-lg text-blue-600">Target Muscle:</span>{" "}
@@ -32,12 +32,12 @@ function ExerciseDetails({ exerciseDetails }) {
             <span className="text-lg text-blue-600">Equipment Required:</span>{" "}
             {equipment}
           </p>
-          <p className="mt-4">
+{/*           <p className="mt-4">
             <span className="text-lg text-blue-600">
               Secondary Muscles Used:
             </span>{" "}
             {secondaryMuscles?.join(", ")}
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
