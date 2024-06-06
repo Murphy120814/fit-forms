@@ -23,7 +23,10 @@ function ExerciseInfo() {
     fetchExerciseData(`${EXERCISE_DETAILS_WITH_ID_FETCH_URL}/${id}`, OPTIONS);
   }, [id]);
 
-  if (!exerciseDetails) return;
+  if (!exerciseDetails)
+    return (
+      <div className="dark:bg-[#1f1e23] bg-white min-h-screen w-full"></div>
+    );
 
   return (
     <div className="dark:bg-[#1f1e23] bg-white">
